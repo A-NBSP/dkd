@@ -1,24 +1,22 @@
 import request from '@/utils/request'
-
+/**
+ * 登录
+ * @param {Object} data 登录的数据
+ * @returns Promise
+ */
 export function login(data) {
   return request({
-    url: '/vue-admin-template/user/login',
-    method: 'post',
+    method: 'POST',
+    url: '/api/user-service/user/login',
     data
   })
 }
-
-export function getInfo(token) {
+/**
+ * 图片验证码
+ */
+export const photo = (random) => {
   return request({
-    url: '/vue-admin-template/user/info',
-    method: 'get',
-    params: { token }
-  })
-}
-
-export function logout() {
-  return request({
-    url: '/vue-admin-template/user/logout',
-    method: 'post'
+    url: `/api/user-service/user/imageCode/${random}`,
+    responseType: 'blob'
   })
 }
