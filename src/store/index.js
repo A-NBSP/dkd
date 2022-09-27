@@ -16,10 +16,7 @@ const store = new Vuex.Store({
   getters,
   plugins: [
     createPersistedState({
-      key: 'USER_MSG',
-      reducer(state) {
-        return state.user.userMsg
-      }
+      paths: ['user.userMsg', 'user.userInfo']
     })
   ]
 })

@@ -66,28 +66,44 @@
       border: none;
       height: 100%;
       width: 100% !important;
-    }
-
-    // menu hover
-    .submenu-title-noDropdown,
-    .el-submenu__title {
-      &:hover {
-        background-color: $menuHover !important;
+      a{
+        li{
+          .svg-icon{
+            color: #333;
+            font-size: 18px;
+            vertical-align: middle;
+            .icon{
+              color:#333;
+            }
+          }
+          span{
+            color: #333;
+          }
+        }
       }
     }
 
-    .is-active>.el-submenu__title {
-      color: $subMenuActiveText !important;
+    .is-active {
+      color: #333;
     }
 
     & .nest-menu .el-submenu>.el-submenu__title,
     & .el-submenu .el-menu-item {
       min-width: $sideBarWidth !important;
-      background-color: $subMenuBg !important;
-
-      &:hover {
-        background-color: $subMenuHover !important;
-      }
+      background-color: #fff;
+      height: 56px;
+      line-height: 56px;
+      font-size: 14px;
+      color: #333;
+      padding: 0 20px;
+      list-style: none;
+      cursor: pointer;
+      position: relative;
+      -webkit-transition: border-color .3s,background-color .3s,color .3s;
+      transition: border-color .3s,background-color .3s,color .3s;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      white-space: nowrap;
     }
   }
 
@@ -103,7 +119,7 @@
     .submenu-title-noDropdown {
       padding: 0 !important;
       position: relative;
-
+      color: #333;
       .el-tooltip {
         padding: 0 !important;
 
@@ -116,13 +132,14 @@
         }
       }
     }
-
+    .el-menu-item *{
+      color: #333;
+    }
     .el-submenu {
       overflow: hidden;
 
       &>.el-submenu__title {
         padding: 0 !important;
-
         .svg-icon {
           margin-left: 20px;
         }
@@ -197,12 +214,8 @@
     }
   }
 
-  .nest-menu .el-submenu>.el-submenu__title,
-  .el-menu-item {
-    &:hover {
-      // you can use $subMenuHover
-      background-color: $menuHover !important;
-    }
+  .el-submenu__title{
+    color: #333;
   }
 
   // the scroll bar appears when the subMenu is too long
